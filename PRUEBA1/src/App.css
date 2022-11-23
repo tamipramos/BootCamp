@@ -23,7 +23,23 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.Body {
+  margin: 0 auto;
+  border-style:inset;
+  border-radius: 20px;
+  border-color: orange;
+  border-width: 5px;
+  height: 50%;
+  width: 50%;
+  padding: 3%;
+}
+.Text-center{
+  text-align: center;
+}
+.Inbox{
+  margin:30%;
 
+}
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +51,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  /* For your border-radius: */
+  border-radius: 4px;
+  /* This will offer the illusion that it's adopting the
+  background beneath it as its own but lightening it --
+  almost like IOS. */
+  background: rgb(200, 102, 206);
+  opacity: .4;
+}
+
+/* Then maybe something like */
+button:hover {
+  background: rgb(255, 0, 208);
+  opacity: .4;
 }
