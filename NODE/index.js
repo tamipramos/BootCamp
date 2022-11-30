@@ -1,5 +1,8 @@
 // const { response, request } = require('express')
+const logger = require('./tools/logger')
 const express = require('express')
+const cors = require('cors')
+
 let notes = [
   {
     id: 1,
@@ -22,9 +25,9 @@ let notes = [
 ]
 
 const app = express()
-
+app.use(logger)
 app.use(express.json())
-
+app.use(cors())
 app.get('/', (request, response) => {
   response.send('<h1>aaaaa</h1>')
 })
@@ -63,7 +66,12 @@ app.delete('/api/notes/:id', (request, response) => {
   response.status(204).end()
 })
 
-const PORT = 3001
+app.use((request, response) => {
+  response.status(404).json({
+    error: 'Not Found'
+  })
+})
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Corriendo server en el puerto: [${PORT}]`)
 })
