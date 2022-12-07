@@ -1,12 +1,25 @@
-POST http://localhost:3001/api/notes/
+POST http://localhost:3000/api/notes/
 Content-Type: application/json
+
 {
-    "content":"Hola que tal",
+    "content":"Hola que tal, soy la nota 2",
     "important":true
 }
+
 ###
-DELETE http://localhost:3001/api/notes/5
+PUT http://localhost:3000/api/notes/638cbf458011322dda733d14
+Content-Type: application/json
+
+{
+    "content":"Hola que tal, soy la nota 1",
+    "important":false
+}
+
 ###
-GET http://localhost:3001/api/notes/4
+
+DELETE http://localhost:3000/api/notes/638cd39a5a31af494dd17c31
+
+###
+GET http://localhost:3000/api/notes/
 
 
